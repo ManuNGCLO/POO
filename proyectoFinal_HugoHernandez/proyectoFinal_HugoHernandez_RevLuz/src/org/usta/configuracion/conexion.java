@@ -29,7 +29,7 @@ public abstract class conexion {
         usuario= "user_proyecto";
         clave = "123456";
         driver = "com.mysql.cj.jdbc.Driver";
-        url = "jdbc:mysql://localhost:3306/bd_proyecto";
+        url = "jdbc:mysql://localhost:3306/bd_proyectofinal";
         
         activarConexion();
     }
