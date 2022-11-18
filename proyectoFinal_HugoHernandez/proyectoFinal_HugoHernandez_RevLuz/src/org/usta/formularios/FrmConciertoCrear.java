@@ -303,7 +303,7 @@ public class FrmConciertoCrear extends javax.swing.JInternalFrame {
             //System.out.println("FechaCalendario: "+ fechaCalendario);
             TipoConcierto miTipo = new TipoConcierto(codTipoConciertoFinal, "");
             
-            Concierto objConcierto = new Concierto(0, (java.sql.Date) fechaCalendario,cadenaNombre,  miTipo);
+            Concierto objConcierto = new Concierto(0, cadenaNombre, fechaCalendario, miTipo);
             ConciertoDAO objConciertoDao  =  new ConciertoDAO();
             
             if (objConciertoDao.agregar(objConcierto)) {
