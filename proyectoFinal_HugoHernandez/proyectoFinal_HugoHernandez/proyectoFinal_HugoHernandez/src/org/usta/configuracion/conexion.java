@@ -26,10 +26,10 @@ public abstract class conexion {
 
     public conexion() {
         
-        usuario= "user_usuario";
+        usuario= "hugo_hernandez";
         clave = "123456";
         driver = "com.mysql.cj.jdbc.Driver";
-        url = "jdbc:mysql://localhost:3306/bd_nueva";
+        url = "jdbc:mysql://localhost:3306/bd_final";
         
         activarConexion();
     }

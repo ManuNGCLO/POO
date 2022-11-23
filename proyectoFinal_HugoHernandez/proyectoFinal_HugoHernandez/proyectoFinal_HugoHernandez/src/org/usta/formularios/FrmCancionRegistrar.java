@@ -16,12 +16,12 @@ import org.usta.DAOS.GeneroDao;
 import org.usta.modelos.Cancion;
 import org.usta.modelos.Genero;
 
-public class FrmCancionesRegistrar extends javax.swing.JInternalFrame {
+public class FrmCancionRegistrar extends javax.swing.JInternalFrame {
 
     private Map<Integer, Integer> codigosGeneros = new HashMap<>();
     private DefaultComboBoxModel modeloComboGC = new DefaultComboBoxModel();
 
-    public FrmCancionesRegistrar() {
+    public FrmCancionRegistrar() {
         initComponents();
 
         comboGenero.setModel(modeloComboGC);
@@ -241,7 +241,7 @@ public class FrmCancionesRegistrar extends javax.swing.JInternalFrame {
             
 
         } catch (ParseException ex) {
-            Logger.getLogger(FrmCancionesRegistrar.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FrmCancionRegistrar.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         

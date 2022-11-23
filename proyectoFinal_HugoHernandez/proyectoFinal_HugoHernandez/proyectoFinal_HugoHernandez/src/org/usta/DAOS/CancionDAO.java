@@ -17,7 +17,7 @@ public class CancionDAO extends  conexion implements OperacionesBasicas<Cancion>
     public Boolean agregar(Cancion miObjeto) {
   try {
             cadenaSql = "INSERT INTO canciones(nombre_cancion, "
-                    + "cod_genero_cancion, fechapublicacion_cancion) VALUES (?,?,?)";
+                    + "cod_genero, fecha_publicacion_cancion) VALUES (?,?,?)";
             consulta = objConexion.prepareStatement(cadenaSql);
             consulta.setString(1, miObjeto.getNombre_cancion());
             consulta.setInt(2, miObjeto.getCod_genero_cancion().getCod_genero());
@@ -45,11 +45,11 @@ public class CancionDAO extends  conexion implements OperacionesBasicas<Cancion>
                 orden = "c.cod_cancion";
             }
 
-            cadenaSql = "SELECT c.cod_cancion, c.nombre_cancion, c.fechapublicacion_cancion, "
+            cadenaSql = "SELECT c.cod_cancion, c.nombre_cancion, c.fecha_publicacion_cancion, "
                     + " gc.cod_genero, gc.nombre_genero "
                     + " FROM canciones c "
                     + "INNER JOIN generos gc "
-                    + " ON c.cod_genero_cancion = gc.cod_genero "
+                    + " ON c.cod_genero = gc.cod_genero "
                     + " ORDER BY " + orden;
 
             List<Cancion> arregloC = new ArrayList<>();

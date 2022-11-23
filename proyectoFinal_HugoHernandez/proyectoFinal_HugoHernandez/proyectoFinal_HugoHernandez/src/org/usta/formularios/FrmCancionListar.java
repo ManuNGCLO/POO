@@ -185,7 +185,7 @@ public class FrmCancionListar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnGeneroActionPerformed
 
     private void btnFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFechaActionPerformed
-        cargarCanciones("c.fechapublicacion_cancion");
+        cargarCanciones("c.fecha_publicacion_cancion");
     }//GEN-LAST:event_btnFechaActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed

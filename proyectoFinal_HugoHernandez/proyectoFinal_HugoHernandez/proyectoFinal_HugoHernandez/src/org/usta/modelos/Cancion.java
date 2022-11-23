@@ -11,7 +11,7 @@ public class Cancion {
     
     private Integer cod_cancion ;
     private String nombre_cancion ;
-    private Date fechapublicacion_cancion  ; 
+    private Date fecha_publicacion_cancion  ; 
     private Genero cod_genero_cancion;
 
     public Cancion() {
@@ -20,7 +20,7 @@ public class Cancion {
     public Cancion(Integer cod_cancion, String nombre_cancion, Date fechapublicacion_cancion, Genero cod_genero_cancion) {
         this.cod_cancion = cod_cancion;
         this.nombre_cancion = nombre_cancion;
-        this.fechapublicacion_cancion = fechapublicacion_cancion;
+        this.fecha_publicacion_cancion = fechapublicacion_cancion;
         this.cod_genero_cancion = cod_genero_cancion;
     }
 
@@ -41,11 +41,11 @@ public class Cancion {
     }
 
     public Date getFechapublicacion_cancion() {
-        return fechapublicacion_cancion;
+        return fecha_publicacion_cancion;
     }
 
     public void setFechapublicacion_cancion(Date fechapublicacion_cancion) {
-        this.fechapublicacion_cancion = fechapublicacion_cancion;
+        this.fecha_publicacion_cancion = fechapublicacion_cancion;
     }
 
     public Genero getCod_genero_cancion() {
@@ -58,7 +58,7 @@ public class Cancion {
 
     @Override
     public String toString() {
-        return "Cancion{" + "cod_cancion=" + cod_cancion + ", nombre_cancion=" + nombre_cancion + ", fechapublicacion_cancion=" + fechapublicacion_cancion + ", cod_genero_cancion=" + cod_genero_cancion + '}';
+        return "Cancion{" + "cod_cancion=" + cod_cancion + ", nombre_cancion=" + nombre_cancion + ", fechapublicacion_cancion=" + fecha_publicacion_cancion + ", cod_genero_cancion=" + cod_genero_cancion + '}';
     }
 
     @Override

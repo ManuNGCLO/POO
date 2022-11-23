@@ -14,39 +14,43 @@ CREATE TABLE usuarios_conciertos(
         cod_usuario int not null,
         PRIMARY KEY(cod_usuario, cod_concierto)
 
-        
-
 );
 
 CREATE TABLE artistas(
 
 	cod_artista int not null auto_increment,
-	nombre_artista varchar(200) not null,        
-	honorario_artista varchar(30) not null,
+	nombre_completo_artista varchar(200) not null,        
 	condiciones_artista varchar (200) not null,
         cod_cancion int not null,
 	PRIMARY KEY(cod_artista)
 
 );
 
+CREATE TABLE artistas_canciones(
+
+        cod_artista int not null,
+        cod_cancion int not null,
+        PRIMARY KEY(cod_artista, cod_cancion)
+        
+);
+
 CREATE TABLE canciones (
 
 	cod_cancion int not null auto_increment,
 	nombre_cancion varchar (200) not null,
-	duracion_cancion varchar (200) not null,
-        fecha_publicacion_cancion DATE not null,
-	compositor_cancion varchar(100) not null,
-        cod_genero_musical int not null,
+	
+        fecha_publicacion_cancion DATE not null,	
+        cod_genero int not null,
 	PRIMARY KEY(cod_cancion)
 
 );
 
-CREATE TABLE generos_musicales(
+CREATE TABLE generos(
 
 
-	cod_genero_musical int not null auto_increment,
+	cod_genero int not null auto_increment,
 	nombre_genero varchar(200) not null,
-	PRIMARY KEY(cod_genero_musical)
+	PRIMARY KEY(cod_genero)
 );
 
 CREATE TABLE tipos_conciertos(
@@ -98,8 +102,11 @@ alter table conciertos_artistas add constraint fk_conciertos_artistas_ref_artist
 alter table conciertos_artistas add constraint fk_conciertos_artistas_ref_conciertos foreign key (cod_concierto)
      references conciertos (cod_concierto) on delete restrict on update cascade;
 
-alter table artistas add constraint fk_artistas_ref_canciones foreign key (cod_cancion)
+alter table artistas_canciones add constraint fk_artistas_canciones_ref_canciones foreign key (cod_cancion)
      references canciones (cod_cancion) on delete restrict on update cascade;
 
-alter table canciones add constraint fk_canciones_ref_generos_musicales foreign key (cod_genero_musical)
-     references generos_musicales (cod_genero_musical) on delete restrict on update cascade;
+alter table artistas_canciones add constraint fk_artistas_canciones_ref_artistas foreign key(cod_artista)
+    references artistas (cod_artista) on delete restrict on update cascade;
+
+alter table canciones add constraint fk_canciones_ref_generos foreign key (cod_genero)
+     references generos (cod_genero) on delete restrict on update cascade;
