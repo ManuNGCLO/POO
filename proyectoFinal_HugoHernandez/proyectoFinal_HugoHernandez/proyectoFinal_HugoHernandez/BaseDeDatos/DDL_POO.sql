@@ -9,10 +9,11 @@ CREATE TABLE conciertos(
 
 CREATE TABLE usuarios_conciertos(
         
-        cod_usuario_concierto int not null auto_increment,
+        
         cod_concierto int not null,
         cod_usuario int not null,
-        PRIMARY KEY(cod_usuario_concierto)
+        PRIMARY KEY(cod_usuario, cod_concierto)
+
         
 
 );
@@ -20,12 +21,10 @@ CREATE TABLE usuarios_conciertos(
 CREATE TABLE artistas(
 
 	cod_artista int not null auto_increment,
-	nombre_artista varchar(200) not null,
-        primer_apellido_artista varchar(100) not null,
-        segundo_apellido_artista varchar(100) not null,
-	honorario_artista double not null,
+	nombre_artista varchar(200) not null,        
+	honorario_artista varchar(30) not null,
 	condiciones_artista varchar (200) not null,
-        cod_artista int not null,
+        cod_cancion int not null,
 	PRIMARY KEY(cod_artista)
 
 );
@@ -47,7 +46,7 @@ CREATE TABLE generos_musicales(
 
 	cod_genero_musical int not null auto_increment,
 	nombre_genero varchar(200) not null,
-	PRIMARY KEY(cod_generoMusical)
+	PRIMARY KEY(cod_genero_musical)
 );
 
 CREATE TABLE tipos_conciertos(
@@ -58,22 +57,22 @@ CREATE TABLE tipos_conciertos(
 );
 
 CREATE TABLE conciertos_artistas(
-    cod_concierto_artista int not null auto_increment,
+    
     cod_artista int not null,
     cod_concierto int not null,
-    primary key(cod_concierto_artista)
+    primary key(cod_concierto, cod_artista)
 
 
 );
 
 CREATE TABLE ubicaciones(
-    cod_ubicacion INT AUTO_INCREMENT,
+    cod_ubicacion INT not null AUTO_INCREMENT,
     direcciones_ubicacion VARCHAR(100) NOT NULL,
     primary key(cod_ubicacion)
 );
 
 CREATE TABLE usuarios(
-    cod_usuario INT AUTO_INCREMENT,
+    cod_usuario INT not null AUTO_INCREMENT,
     correo_usuario varchar(100) not null,
     clave_usuario varchar(100) not null,
     nombre_usuario varchar(100) not null,
@@ -104,4 +103,3 @@ alter table artistas add constraint fk_artistas_ref_canciones foreign key (cod_c
 
 alter table canciones add constraint fk_canciones_ref_generos_musicales foreign key (cod_genero_musical)
      references generos_musicales (cod_genero_musical) on delete restrict on update cascade;
-
