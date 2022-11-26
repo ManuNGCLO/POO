@@ -10,7 +10,7 @@ import org.usta.configuracion.conexion;
 import org.usta.interfaces.OperacionesBasicas;
 import org.usta.modelos.TipoConcierto;
 
-public class TipoConciertoDAO extends conexion implements OperacionesBasicas<TipoConcierto>{
+public class TipoConciertoDao extends conexion implements OperacionesBasicas<TipoConcierto>{
 
     @Override
     public Boolean agregar(TipoConcierto miObjeto) {
@@ -26,7 +26,7 @@ public class TipoConciertoDAO extends conexion implements OperacionesBasicas<Tip
            
             
         } catch (SQLException ex) {
-            Logger.getLogger(TipoConciertoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoConciertoDao.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
         
@@ -59,7 +59,7 @@ public class TipoConciertoDAO extends conexion implements OperacionesBasicas<Tip
             return arregloTC;
             
         } catch (SQLException ex) {
-            Logger.getLogger(TipoConciertoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoConciertoDao.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
         
@@ -80,7 +80,7 @@ public class TipoConciertoDAO extends conexion implements OperacionesBasicas<Tip
             
             
         } catch (SQLException ex) {
-            Logger.getLogger(TipoConciertoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoConciertoDao.class.getName()).log(Level.SEVERE, null, ex);
             return false;
             
             
@@ -106,7 +106,7 @@ public class TipoConciertoDAO extends conexion implements OperacionesBasicas<Tip
             return filas > 0;
             
         } catch (SQLException ex) {
-            Logger.getLogger(TipoConciertoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoConciertoDao.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
         
@@ -144,7 +144,7 @@ public class TipoConciertoDAO extends conexion implements OperacionesBasicas<Tip
             return objEncontrada;
 
         } catch (SQLException ex) {
-            Logger.getLogger(TipoConciertoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoConciertoDao.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }

@@ -12,8 +12,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 
-import org.usta.DAOS.ConciertoDAO;
-import org.usta.DAOS.TipoConciertoDAO;
+import org.usta.DAOS.ConciertoDao;
+import org.usta.DAOS.TipoConciertoDao;
 import org.usta.modelos.Concierto;
 import org.usta.modelos.TipoConcierto;
 
@@ -40,7 +40,7 @@ public class FrmConciertoCrear extends javax.swing.JInternalFrame {
 
         List<TipoConcierto> arregloTC;
 
-        TipoConciertoDAO objDaoTC = new TipoConciertoDAO();
+        TipoConciertoDao objDaoTC = new TipoConciertoDao();
         arregloTC = objDaoTC.consultar("");
 
         modeloComboTC.addElement("Seleccione una Opción"); //Esto es para que no muestre el primer dato
@@ -304,7 +304,7 @@ public class FrmConciertoCrear extends javax.swing.JInternalFrame {
             TipoConcierto miTipo = new TipoConcierto(codTipoConciertoFinal, "");
             
             Concierto objConcierto = new Concierto(0, cadenaNombre, fechaCalendario, miTipo);
-            ConciertoDAO objConciertoDao  =  new ConciertoDAO();
+            ConciertoDao objConciertoDao  =  new ConciertoDao();
             
             if (objConciertoDao.agregar(objConcierto)) {
                 

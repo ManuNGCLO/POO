@@ -14,8 +14,8 @@ import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import org.usta.DAOS.ConciertoDAO;
-import org.usta.DAOS.TipoConciertoDAO;
+import org.usta.DAOS.ConciertoDao;
+import org.usta.DAOS.TipoConciertoDao;
 import org.usta.modelos.Concierto;
 import org.usta.modelos.TipoConcierto;
 
@@ -24,7 +24,15 @@ public class FrmConciertoAdmin extends javax.swing.JInternalFrame {
     private Integer codigoConcierto = null;
 
     private String titulos[] = {"Código", " Nombre", "Fecha", "Tipo"};
-    private DefaultTableModel miModeloTabla = new DefaultTableModel(titulos, 0);
+    private DefaultTableModel miModeloTabla = new DefaultTableModel(titulos, 0){
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return super.isCellEditable(row, column); 
+        }
+    
+    
+    
+    };
 
     private Map<Integer, Integer> codigosTipoConcierto = new HashMap<>();
     private DefaultComboBoxModel modeloComboTC = new DefaultComboBoxModel();
@@ -45,7 +53,7 @@ public class FrmConciertoAdmin extends javax.swing.JInternalFrame {
 
         miModeloTabla.setNumRows(0);
 
-        ConciertoDAO miDAOC = new ConciertoDAO();
+        ConciertoDao miDAOC = new ConciertoDao();
         arreglo = miDAOC.consultar(orden);
         arreglo.forEach((conciertoL) -> {
             Object fila[] = new Object[4];
@@ -69,7 +77,7 @@ public class FrmConciertoAdmin extends javax.swing.JInternalFrame {
 
         List<TipoConcierto> arregloTC;
 
-        TipoConciertoDAO objDaoTC = new TipoConciertoDAO();
+        TipoConciertoDao objDaoTC = new TipoConciertoDao();
         arregloTC = objDaoTC.consultar("");
 
         modeloComboTC.addElement("Seleccione una Opción"); //Esto es para que no muestre el primer dato
@@ -245,9 +253,19 @@ public class FrmConciertoAdmin extends javax.swing.JInternalFrame {
 
         btnEliminarC.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         btnEliminarC.setText("Eliminar");
+        btnEliminarC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarCActionPerformed(evt);
+            }
+        });
 
         btnCancelarC.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         btnCancelarC.setText("Cancelar");
+        btnCancelarC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarCActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -351,7 +369,7 @@ public class FrmConciertoAdmin extends javax.swing.JInternalFrame {
 
         codigoConcierto = Integer.valueOf(codigoTexto);
 
-        ConciertoDAO MiDaoC = new ConciertoDAO();
+        ConciertoDao MiDaoC = new ConciertoDao();
 
         Concierto objConcierto = MiDaoC.buscar(codigoConcierto);
 
@@ -390,15 +408,13 @@ public class FrmConciertoAdmin extends javax.swing.JInternalFrame {
             cadenaFecha = fConcierto.getDate().toString();
 
             SimpleDateFormat formatoAntiguo = new SimpleDateFormat(formatoCalendario, Locale.ENGLISH);
-            
+
             fechaCalendario = formatoAntiguo.parse(cadenaFecha);
-            
-            
 
             TipoConcierto miTipo = new TipoConcierto(codTipoConciertoFinal, "");
 
             Concierto objConcierto = new Concierto(codigoConcierto, cadenaNombre, fechaCalendario, miTipo);
-            ConciertoDAO objConciertoDao = new ConciertoDAO();
+            ConciertoDao objConciertoDao = new ConciertoDao();
 
             if (objConciertoDao.actualizar(objConcierto)) {
 
@@ -419,6 +435,36 @@ public class FrmConciertoAdmin extends javax.swing.JInternalFrame {
 
 
     }//GEN-LAST:event_btnActualizarCActionPerformed
+
+    private void btnEliminarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCActionPerformed
+
+        ConciertoDao miConciertoDAO = new ConciertoDao();
+        Concierto objConcierto = new Concierto(codigoConcierto, "", new Date(), new TipoConcierto());
+
+        if (miConciertoDAO.eliminar(objConcierto)) {
+
+            cargarConciertos("");
+            comboTipoC.setSelectedIndex(0);
+            cajaNombre.setText("");
+            fConcierto.setDate(null);
+
+            JOptionPane.showMessageDialog(panelCuerpo, "El registro se eliminó correctamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+
+        } else {
+
+            JOptionPane.showMessageDialog(panelCuerpo, "El registro NO se eliminó", "Se petaquio", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnEliminarCActionPerformed
+
+    private void btnCancelarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarCActionPerformed
+        TablaDatosAD.clearSelection();
+
+        cargarConciertos("");
+        comboTipoC.setSelectedIndex(0);
+        cajaNombre.setText("");
+        fConcierto.setDate(null);
+
+    }//GEN-LAST:event_btnCancelarCActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

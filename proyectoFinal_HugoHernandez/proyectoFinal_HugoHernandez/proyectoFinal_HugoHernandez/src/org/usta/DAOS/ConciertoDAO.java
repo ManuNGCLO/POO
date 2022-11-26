@@ -13,7 +13,7 @@ import org.usta.interfaces.OperacionesBasicas;
 import org.usta.modelos.Concierto;
 import org.usta.modelos.TipoConcierto;
 
-public class ConciertoDAO extends conexion implements OperacionesBasicas<Concierto> {
+public class ConciertoDao extends conexion implements OperacionesBasicas<Concierto> {
 
     @Override
     public Boolean agregar(Concierto miObjeto) {
@@ -34,7 +34,7 @@ public class ConciertoDAO extends conexion implements OperacionesBasicas<Concier
             return filitas > 0;
 
         } catch (SQLException ex) {
-            Logger.getLogger(ConciertoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConciertoDao.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
 
@@ -80,7 +80,7 @@ public class ConciertoDAO extends conexion implements OperacionesBasicas<Concier
             return arregloC;
 
         } catch (SQLException ex) {
-            Logger.getLogger(ConciertoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConciertoDao.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
 
@@ -88,7 +88,18 @@ public class ConciertoDAO extends conexion implements OperacionesBasicas<Concier
 
     @Override
     public Boolean eliminar(Concierto miObjeto) {
-        return null;
+        try {
+            cadenaSql = "delete from conciertos where cod_concierto = ?";
+            consulta = objConexion.prepareStatement(cadenaSql);
+            consulta.setInt(1, miObjeto.getCodConcierto());
+            
+            filas = consulta.executeUpdate();
+            objConexion.close();
+            return filas > 0;
+        } catch (SQLException ex) {
+            Logger.getLogger(ConciertoDao.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
     }
 
     @Override
@@ -117,7 +128,7 @@ public class ConciertoDAO extends conexion implements OperacionesBasicas<Concier
             
             
         } catch (SQLException ex) {
-            Logger.getLogger(ConciertoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConciertoDao.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
     }
@@ -162,7 +173,7 @@ public class ConciertoDAO extends conexion implements OperacionesBasicas<Concier
             return objEncontrado;
 
         } catch (SQLException ex) {
-            Logger.getLogger(TipoConciertoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoConciertoDao.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
 

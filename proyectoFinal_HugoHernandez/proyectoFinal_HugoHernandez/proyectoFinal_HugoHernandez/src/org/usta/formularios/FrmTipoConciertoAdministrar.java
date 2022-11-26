@@ -3,7 +3,7 @@ package org.usta.formularios;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import org.usta.DAOS.TipoConciertoDAO;
+import org.usta.DAOS.TipoConciertoDao;
 import org.usta.modelos.TipoConcierto;
 
 public class FrmTipoConciertoAdministrar extends javax.swing.JInternalFrame {
@@ -22,7 +22,7 @@ public class FrmTipoConciertoAdministrar extends javax.swing.JInternalFrame {
         List<TipoConcierto> arreglito;
         
         miModelo.setNumRows(0);
-        TipoConciertoDAO miDAO = new TipoConciertoDAO();
+        TipoConciertoDao miDAO = new TipoConciertoDao();
         arreglito = miDAO.consultar("");
         arreglito.forEach((tipito)->{
             Object columna[] = new Object[2];
@@ -247,7 +247,7 @@ public class FrmTipoConciertoAdministrar extends javax.swing.JInternalFrame {
 
         String codigoTexto = miModelo.getValueAt(filaSeleccionada, 0).toString(); //va a guardar el calor string del codigo seleccionado
 
-         TipoConciertoDAO MiDaoTC = new TipoConciertoDAO();
+         TipoConciertoDao MiDaoTC = new TipoConciertoDao();
 
         TipoConcierto objTipoC = MiDaoTC.buscar(Integer.valueOf(codigoTexto));
 
@@ -272,7 +272,7 @@ public class FrmTipoConciertoAdministrar extends javax.swing.JInternalFrame {
 
         int codigo = Integer.valueOf(cajaCodigo.getText());
         
-        TipoConciertoDAO miDaoTC = new TipoConciertoDAO();
+        TipoConciertoDao miDaoTC = new TipoConciertoDao();
         TipoConcierto objTC = new TipoConcierto(codigo, "");
         
         if (miDaoTC.eliminar(objTC)) {
@@ -304,7 +304,7 @@ public class FrmTipoConciertoAdministrar extends javax.swing.JInternalFrame {
         int codigoM = Integer.valueOf(codigoMTexto);
         
         TipoConcierto objTC = new TipoConcierto(codigoM, nombreTexto);
-        TipoConciertoDAO miDAOTC = new TipoConciertoDAO();
+        TipoConciertoDao miDAOTC = new TipoConciertoDao();
         
         if (miDAOTC.actualizar(objTC)) {
             

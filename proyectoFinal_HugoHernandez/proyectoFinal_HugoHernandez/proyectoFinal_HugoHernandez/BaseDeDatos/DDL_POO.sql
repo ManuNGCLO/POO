@@ -21,7 +21,7 @@ CREATE TABLE artistas(
 	cod_artista int not null auto_increment,
 	nombre_completo_artista varchar(200) not null,        
 	condiciones_artista varchar (200) not null,
-        cod_cancion int not null,
+        
 	PRIMARY KEY(cod_artista)
 
 );

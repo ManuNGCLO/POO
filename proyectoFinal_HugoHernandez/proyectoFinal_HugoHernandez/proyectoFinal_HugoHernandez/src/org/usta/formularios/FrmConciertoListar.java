@@ -4,7 +4,7 @@ import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import org.usta.modelos.Concierto;
 
-import org.usta.DAOS.ConciertoDAO;
+import org.usta.DAOS.ConciertoDao;
 
 public class FrmConciertoListar extends javax.swing.JInternalFrame {
 
@@ -23,7 +23,7 @@ public class FrmConciertoListar extends javax.swing.JInternalFrame {
         List<Concierto> arreglo;
         
         miModelo.setNumRows(0);
-        ConciertoDAO miDAO = new ConciertoDAO();
+        ConciertoDao miDAO = new ConciertoDao();
         arreglo = miDAO.consultar("");
         arreglo.forEach((tipito)->{
             Object columna[] = new Object[3];

@@ -1,7 +1,7 @@
 package org.usta.formularios;
 
 import javax.swing.JOptionPane;
-import org.usta.DAOS.TipoConciertoDAO;
+import org.usta.DAOS.TipoConciertoDao;
 import org.usta.modelos.TipoConcierto;
 
 public class FrmTipoConciertoCrear extends javax.swing.JInternalFrame {
@@ -109,7 +109,7 @@ public class FrmTipoConciertoCrear extends javax.swing.JInternalFrame {
                     "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             TipoConcierto objTipoConcierto = new TipoConcierto(0, nombre);
-            TipoConciertoDAO objDao = new TipoConciertoDAO();
+            TipoConciertoDao objDao = new TipoConciertoDao();
             if (objDao.agregar(objTipoConcierto)) {
                 cajaCrearTipoC.setText("");
                 cajaCrearTipoC.requestFocus();

@@ -1,5 +1,10 @@
 package org.usta.formularios;
 
+import javax.swing.JOptionPane;
+import org.usta.DAOS.ArtistaDao;
+import org.usta.modelos.Artista;
+
+
 public class FrmArtistaCrear extends javax.swing.JInternalFrame {
 
     public FrmArtistaCrear() {
@@ -16,8 +21,6 @@ public class FrmArtistaCrear extends javax.swing.JInternalFrame {
         panelCuerpoA = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         cajaNombre = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        cajaHorarioArtista = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         cajaCondicionesArtista = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -62,9 +65,6 @@ public class FrmArtistaCrear extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jLabel3.setText("Nombre Artista");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jLabel5.setText("Horario Artista");
-
         jLabel6.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jLabel6.setText("Condiciones Artista");
 
@@ -72,6 +72,11 @@ public class FrmArtistaCrear extends javax.swing.JInternalFrame {
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jButton1.setText("Registrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelCuerpoALayout = new javax.swing.GroupLayout(panelCuerpoA);
         panelCuerpoA.setLayout(panelCuerpoALayout);
@@ -86,14 +91,12 @@ public class FrmArtistaCrear extends javax.swing.JInternalFrame {
                         .addGap(92, 92, 92)
                         .addGroup(panelCuerpoALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5))
+                            .addComponent(jLabel3))
                         .addGap(20, 20, 20)
                         .addGroup(panelCuerpoALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cajaCondicionesArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cajaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cajaHorarioArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(104, Short.MAX_VALUE))
+                            .addComponent(cajaCondicionesArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         panelCuerpoALayout.setVerticalGroup(
             panelCuerpoALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,12 +108,8 @@ public class FrmArtistaCrear extends javax.swing.JInternalFrame {
                 .addGap(37, 37, 37)
                 .addGroup(panelCuerpoALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(cajaCondicionesArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addGroup(panelCuerpoALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(cajaHorarioArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(57, 57, 57)
+                    .addComponent(cajaCondicionesArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(22, 22, 22))
         );
@@ -140,16 +139,39 @@ public class FrmArtistaCrear extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        String nombre,condiciones;
+        nombre = cajaNombre.getText();
+        condiciones  = cajaCondicionesArtista.getText();
+        if (nombre.equals("" ) || condiciones.equals("")) {
+            JOptionPane.showMessageDialog(panelCuerpoA, "Son obligatorios Ctm!!!",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            Artista objArtista = new Artista(0, nombre, condiciones);
+            ArtistaDao objDao = new ArtistaDao();
+            if (objDao.agregar(objArtista)) {
+                cajaNombre.setText("");
+                cajaCondicionesArtista.setText("");
+                cajaNombre.requestFocus();
+                cajaCondicionesArtista.requestFocus();
+                JOptionPane.showMessageDialog(panelCuerpoA, "Guardado correctamente.", "Exito", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(panelCuerpoA, "Se petaquio!", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField cajaCondicionesArtista;
-    private javax.swing.JTextField cajaHorarioArtista;
     private javax.swing.JTextField cajaNombre;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel panelCabezaA;
     private javax.swing.JPanel panelCuerpoA;

@@ -2,7 +2,7 @@ package org.usta.formularios;
 
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import org.usta.DAOS.TipoConciertoDAO;
+import org.usta.DAOS.TipoConciertoDao;
 import org.usta.modelos.TipoConcierto;
 
 public class FrmTipoConciertoListar extends javax.swing.JInternalFrame {
@@ -22,8 +22,8 @@ public class FrmTipoConciertoListar extends javax.swing.JInternalFrame {
         List<TipoConcierto> arreglito;
         
         miModelo.setNumRows(0);
-        TipoConciertoDAO miDAO = new TipoConciertoDAO();
-        arreglito = miDAO.consultar("");
+        TipoConciertoDao miDAO = new TipoConciertoDao();
+        arreglito = miDAO.consultar(ordencito);
         arreglito.forEach((tipito)->{
             Object columna[] = new Object[2];
             columna[0] = tipito.getCodTipoConcierto();

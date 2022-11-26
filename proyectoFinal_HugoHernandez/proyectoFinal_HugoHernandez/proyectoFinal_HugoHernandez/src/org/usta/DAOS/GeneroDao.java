@@ -28,7 +28,7 @@ public class GeneroDao extends conexion implements OperacionesBasicas<Genero> {
             return filitas > 0;
 
         } catch (SQLException ex) {
-            Logger.getLogger(ConciertoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConciertoDao.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
 

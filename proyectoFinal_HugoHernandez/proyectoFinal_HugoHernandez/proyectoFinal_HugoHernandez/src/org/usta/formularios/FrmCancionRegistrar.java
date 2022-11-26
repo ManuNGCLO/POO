@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
-import org.usta.DAOS.CancionDAO;
+import org.usta.DAOS.CancionDao;
 import org.usta.DAOS.GeneroDao;
 import org.usta.modelos.Cancion;
 import org.usta.modelos.Genero;
@@ -225,7 +225,7 @@ public class FrmCancionRegistrar extends javax.swing.JInternalFrame {
             Genero miGenero = new Genero(codGeneroFinal, "");
             
             Cancion objCancion = new Cancion(0, cadenaNombre, fechaCalendario, miGenero);
-            CancionDAO objCancionDao  =  new CancionDAO();
+            CancionDao objCancionDao  =  new CancionDao();
             
             if (objCancionDao.agregar(objCancion)) {
                 
