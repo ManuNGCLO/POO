@@ -7,30 +7,28 @@ import javax.swing.JOptionPane;
 import org.usta.configuracion.conectandome;
 
 public class FrmPrincipal extends javax.swing.JFrame {
-
+    
     public FrmPrincipal() {
         initComponents();
         conectandome objConexion = new conectandome();
     }
-
+    
     private void gestionarVentanas(JInternalFrame laVentana) {
 
         //try {
-            if (panelPrincipal.getComponentCount() > 0) {
-                panelPrincipal.removeAll();
-            }
-            //laVentana.setMaximum(true);
-            laVentana.setVisible(true);
-
-            panelPrincipal.add(laVentana);
-            panelPrincipal.revalidate();
-            panelPrincipal.repaint();
+        if (panelPrincipal.getComponentCount() > 0) {
+            panelPrincipal.removeAll();
+        }
+        //laVentana.setMaximum(true);
+        laVentana.setVisible(true);
+        
+        panelPrincipal.add(laVentana);
+        panelPrincipal.revalidate();
+        panelPrincipal.repaint();
 
         //} catch (PropertyVetoException e) {
         //}
-
     }
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -62,6 +60,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenu7 = new javax.swing.JMenu();
         jMenuItem16 = new javax.swing.JMenuItem();
         jMenuItem17 = new javax.swing.JMenuItem();
+        jMenu8 = new javax.swing.JMenu();
+        jMenuItem18 = new javax.swing.JMenuItem();
+        jMenuItem19 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -226,6 +227,26 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu7);
 
+        jMenu8.setText("Artista Cancion");
+
+        jMenuItem18.setText("Registrar");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem18);
+
+        jMenuItem19.setText("Listar");
+        jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem19ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem19);
+
+        jMenuBar1.add(jMenu8);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -249,28 +270,28 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-
-                try {
-           String[] nuevosTextos = {"Me voy", "Me quedo"};
-           int option;
-           
-           option = JOptionPane.showOptionDialog(null, "¿Estás seguro de que quieres salir?", "¿Seguro?",
-                   JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, nuevosTextos, nuevosTextos[1]);
-           
-           if ( option == JOptionPane.YES_OPTION){
-               this.dispose();
-           
-           }
-                     
+        
+        try {
+            String[] nuevosTextos = {"Me voy", "Me quedo"};
+            int option;
+            
+            option = JOptionPane.showOptionDialog(null, "¿Estás seguro de que quieres salir?", "¿Seguro?",
+                    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, nuevosTextos, nuevosTextos[1]);
+            
+            if (option == JOptionPane.YES_OPTION) {
+                this.dispose();
+                
+            }
+            
         } catch (Exception e) {
         }
-
+        
 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-         FrmTipoConciertoListar objListarC = new FrmTipoConciertoListar();
-            gestionarVentanas(objListarC);
+        FrmTipoConciertoListar objListarC = new FrmTipoConciertoListar();
+        gestionarVentanas(objListarC);
 
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
@@ -279,7 +300,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         FrmTipoConciertoCrear objCrearTP = new FrmTipoConciertoCrear();
         gestionarVentanas(objCrearTP);
         
-        
+
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
@@ -287,12 +308,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         FrmTipoConciertoAdministrar objAdminTC = new FrmTipoConciertoAdministrar();
         gestionarVentanas(objAdminTC);
         
-        
+
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-       
-        FrmConciertoCrear objConciertoC = new  FrmConciertoCrear();
+        
+        FrmConciertoCrear objConciertoC = new FrmConciertoCrear();
         gestionarVentanas(objConciertoC);
         
     }//GEN-LAST:event_jMenuItem10ActionPerformed
@@ -302,12 +323,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         FrmConciertoListar objConciertoL = new FrmConciertoListar();
         gestionarVentanas(objConciertoL);
         
-        
+
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-
-        FrmConciertoAdmin objConciertoA =  new FrmConciertoAdmin();
+        
+        FrmConciertoAdmin objConciertoA = new FrmConciertoAdmin();
         gestionarVentanas(objConciertoA);
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
@@ -317,7 +338,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-       FrmCancionRegistrar objCancionR = new FrmCancionRegistrar();
+        FrmCancionRegistrar objCancionR = new FrmCancionRegistrar();
         gestionarVentanas(objCancionR);
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
@@ -344,13 +365,22 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-       
+        
         FrmArtistaAdmin objArtistaAdmin = new FrmArtistaAdmin();
         gestionarVentanas(objArtistaAdmin);
         
-        
-        
+
     }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+        FrmArtistaCancion objArtistaCancion = new FrmArtistaCancion();
+        gestionarVentanas(objArtistaCancion);
+    }//GEN-LAST:event_jMenuItem18ActionPerformed
+
+    private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
+        FrmArtistaCancionListar objArtistaCancionListar = new FrmArtistaCancionListar();
+        gestionarVentanas(objArtistaCancionListar);
+    }//GEN-LAST:event_jMenuItem19ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -362,7 +392,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-
+            
             javax.swing.UIManager.setLookAndFeel(new FlatDarkLaf());
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -385,6 +415,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
@@ -395,6 +426,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem18;
+    private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
