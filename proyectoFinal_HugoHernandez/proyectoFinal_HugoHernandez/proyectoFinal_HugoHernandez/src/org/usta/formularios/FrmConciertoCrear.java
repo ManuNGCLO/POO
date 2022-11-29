@@ -69,11 +69,7 @@ public class FrmConciertoCrear extends javax.swing.JInternalFrame {
         panelCrearConcierto = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         cajaNombreConcierto = new javax.swing.JTextField();
-        cajaArtistaConcierto = new javax.swing.JTextField();
-        cajaLocacionConcierto = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         comboTipoC = new javax.swing.JComboBox<>();
         fConcierto = new com.toedter.calendar.JDateChooser();
@@ -93,19 +89,7 @@ public class FrmConciertoCrear extends javax.swing.JInternalFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Fecha del Concierto");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Artista");
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Locación");
-
         cajaNombreConcierto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        cajaArtistaConcierto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        cajaLocacionConcierto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Tipo de concierto");
@@ -125,37 +109,24 @@ public class FrmConciertoCrear extends javax.swing.JInternalFrame {
         panelCrearConciertoLayout.setHorizontalGroup(
             panelCrearConciertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCrearConciertoLayout.createSequentialGroup()
-                .addGap(124, 124, 124)
-                .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelCrearConciertoLayout.createSequentialGroup()
-                .addGroup(panelCrearConciertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(cajaLocacionConcierto, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelCrearConciertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(panelCrearConciertoLayout.createSequentialGroup()
-                            .addGap(124, 124, 124)
-                            .addComponent(jLabel4))
-                        .addGroup(panelCrearConciertoLayout.createSequentialGroup()
-                            .addGap(80, 80, 80)
-                            .addGroup(panelCrearConciertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(cajaArtistaConcierto)
-                                .addComponent(cajaNombreConcierto)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addGap(80, 80, 80)
+                .addGroup(panelCrearConciertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cajaNombreConcierto)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelCrearConciertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrearConciertoLayout.createSequentialGroup()
-                        .addGroup(panelCrearConciertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(panelCrearConciertoLayout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(10, 10, 10))
-                            .addComponent(comboTipoC, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(97, 97, 97))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrearConciertoLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(105, 105, 105))
+                    .addComponent(jLabel3)
+                    .addComponent(fConcierto, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(102, 102, 102))
+            .addGroup(panelCrearConciertoLayout.createSequentialGroup()
+                .addGroup(panelCrearConciertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelCrearConciertoLayout.createSequentialGroup()
-                        .addComponent(fConcierto, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addGap(208, 208, 208)
+                        .addComponent(comboTipoC, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelCrearConciertoLayout.createSequentialGroup()
+                        .addGap(224, 224, 224)
+                        .addComponent(jLabel6)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         panelCrearConciertoLayout.setVerticalGroup(
             panelCrearConciertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,19 +139,11 @@ public class FrmConciertoCrear extends javax.swing.JInternalFrame {
                 .addGroup(panelCrearConciertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cajaNombreConcierto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fConcierto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(panelCrearConciertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel6))
-                .addGap(14, 14, 14)
-                .addGroup(panelCrearConciertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cajaArtistaConcierto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboTipoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cajaLocacionConcierto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addComponent(comboTipoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68))
         );
 
         panelCabeza.setBackground(new java.awt.Color(51, 0, 51));
@@ -326,8 +289,6 @@ public class FrmConciertoCrear extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrearC;
-    private javax.swing.JTextField cajaArtistaConcierto;
-    private javax.swing.JTextField cajaLocacionConcierto;
     private javax.swing.JTextField cajaNombreConcierto;
     private javax.swing.JComboBox<String> comboTipoC;
     private com.toedter.calendar.JDateChooser fConcierto;
@@ -335,8 +296,6 @@ public class FrmConciertoCrear extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel panelCabeza;
     private javax.swing.JPanel panelCrearConcierto;
