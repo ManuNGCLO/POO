@@ -174,6 +174,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenu4.add(jMenuItem8);
 
         jMenuItem9.setText("Administrar");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem9);
 
         jMenuBar1.add(jMenu4);
@@ -337,6 +342,15 @@ public class FrmPrincipal extends javax.swing.JFrame {
         FrmArtistaListar objArtistaListar = new FrmArtistaListar();
         gestionarVentanas(objArtistaListar);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+       
+        FrmArtistaAdmin objArtistaAdmin = new FrmArtistaAdmin();
+        gestionarVentanas(objArtistaAdmin);
+        
+        
+        
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     /**
      * @param args the command line arguments

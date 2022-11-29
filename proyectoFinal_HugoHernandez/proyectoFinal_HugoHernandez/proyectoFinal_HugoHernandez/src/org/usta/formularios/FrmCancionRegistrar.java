@@ -11,8 +11,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
-import org.usta.DAOS.CancionDao;
-import org.usta.DAOS.GeneroDao;
+import org.usta.DAOS.CancionDAO;
+import org.usta.DAOS.GeneroDAO;
 import org.usta.modelos.Cancion;
 import org.usta.modelos.Genero;
 
@@ -37,7 +37,7 @@ public class FrmCancionRegistrar extends javax.swing.JInternalFrame {
 
         List<Genero> arregloGC;
 
-        GeneroDao objDaoGC = new GeneroDao();
+        GeneroDAO objDaoGC = new GeneroDAO();
         arregloGC = objDaoGC.consultar("");
 
         modeloComboGC.addElement("Seleccione una Opción"); //Esto es para que no muestre el primer dato
@@ -225,7 +225,7 @@ public class FrmCancionRegistrar extends javax.swing.JInternalFrame {
             Genero miGenero = new Genero(codGeneroFinal, "");
             
             Cancion objCancion = new Cancion(0, cadenaNombre, fechaCalendario, miGenero);
-            CancionDao objCancionDao  =  new CancionDao();
+            CancionDAO objCancionDao  =  new CancionDAO();
             
             if (objCancionDao.agregar(objCancion)) {
                 

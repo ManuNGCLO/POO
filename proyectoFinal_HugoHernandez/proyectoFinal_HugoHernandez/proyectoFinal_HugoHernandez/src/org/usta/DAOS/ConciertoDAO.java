@@ -13,7 +13,7 @@ import org.usta.interfaces.OperacionesBasicas;
 import org.usta.modelos.Concierto;
 import org.usta.modelos.TipoConcierto;
 
-public class ConciertoDao extends conexion implements OperacionesBasicas<Concierto> {
+public class ConciertoDAO extends conexion implements OperacionesBasicas<Concierto> {
 
     @Override
     public Boolean agregar(Concierto miObjeto) {
@@ -34,7 +34,7 @@ public class ConciertoDao extends conexion implements OperacionesBasicas<Concier
             return filitas > 0;
 
         } catch (SQLException ex) {
-            Logger.getLogger(ConciertoDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConciertoDAO.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
 
@@ -80,7 +80,7 @@ public class ConciertoDao extends conexion implements OperacionesBasicas<Concier
             return arregloC;
 
         } catch (SQLException ex) {
-            Logger.getLogger(ConciertoDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConciertoDAO.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
 
@@ -97,7 +97,7 @@ public class ConciertoDao extends conexion implements OperacionesBasicas<Concier
             objConexion.close();
             return filas > 0;
         } catch (SQLException ex) {
-            Logger.getLogger(ConciertoDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConciertoDAO.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
     }
@@ -128,7 +128,7 @@ public class ConciertoDao extends conexion implements OperacionesBasicas<Concier
             
             
         } catch (SQLException ex) {
-            Logger.getLogger(ConciertoDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConciertoDAO.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
     }

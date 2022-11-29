@@ -3,7 +3,7 @@ package org.usta.formularios;
 
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import org.usta.DAOS.GeneroDao;
+import org.usta.DAOS.GeneroDAO;
 import org.usta.modelos.Genero;
 
 
@@ -24,7 +24,7 @@ public class FrmGeneroListar extends javax.swing.JInternalFrame {
         List<Genero> arreglito;
         
         miModelo.setNumRows(0);
-         GeneroDao miDAO = new GeneroDao();
+         GeneroDAO miDAO = new GeneroDAO();
         arreglito = miDAO.consultar(ordencito);
         arreglito.forEach((tipito)->{
             Object columna[] = new Object[2];

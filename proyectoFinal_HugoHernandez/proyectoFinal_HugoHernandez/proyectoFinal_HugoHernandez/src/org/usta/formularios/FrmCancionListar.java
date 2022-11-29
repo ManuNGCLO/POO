@@ -2,7 +2,7 @@ package org.usta.formularios;
 
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import org.usta.DAOS.CancionDao;
+import org.usta.DAOS.CancionDAO;
 import org.usta.modelos.Cancion;
 
 public class FrmCancionListar extends javax.swing.JInternalFrame {
@@ -21,7 +21,7 @@ public class FrmCancionListar extends javax.swing.JInternalFrame {
         List<Cancion> arreglo;
 
         miModelo.setNumRows(0);
-        CancionDao miDAO = new CancionDao();
+        CancionDAO miDAO = new CancionDAO();
         arreglo = miDAO.consultar(ordencito);
         arreglo.forEach((tipito) -> {
             Object columna[] = new Object[3];

@@ -1,7 +1,7 @@
 package org.usta.formularios;
 
 import javax.swing.JOptionPane;
-import org.usta.DAOS.GeneroDao;
+import org.usta.DAOS.GeneroDAO;
 import org.usta.modelos.Genero;
 
 public class FrmGeneroRegistrar extends javax.swing.JInternalFrame {
@@ -131,7 +131,7 @@ public class FrmGeneroRegistrar extends javax.swing.JInternalFrame {
                     "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             Genero objTipoConcierto = new Genero(0, nombre);
-            GeneroDao objDao = new GeneroDao();
+            GeneroDAO objDao = new GeneroDAO();
             if (objDao.agregar(objTipoConcierto)) {
                 cajaNombreG.setText("");
                 cajaNombreG.requestFocus();

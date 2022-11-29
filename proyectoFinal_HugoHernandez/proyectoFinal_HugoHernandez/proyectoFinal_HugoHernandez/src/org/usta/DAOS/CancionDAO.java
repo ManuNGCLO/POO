@@ -11,7 +11,7 @@ import org.usta.interfaces.OperacionesBasicas;
 import org.usta.modelos.Cancion;
 import org.usta.modelos.Genero;
 
-public class CancionDao extends  conexion implements OperacionesBasicas<Cancion>{
+public class CancionDAO extends  conexion implements OperacionesBasicas<Cancion>{
 
     @Override
     public Boolean agregar(Cancion miObjeto) {
@@ -31,7 +31,7 @@ public class CancionDao extends  conexion implements OperacionesBasicas<Cancion>
             return filitas > 0;
 
         } catch (SQLException ex) {
-            Logger.getLogger(CancionDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CancionDAO.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }       
         
@@ -77,7 +77,7 @@ public class CancionDao extends  conexion implements OperacionesBasicas<Cancion>
             return arregloC;
 
         } catch (SQLException ex) {
-            Logger.getLogger(CancionDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CancionDAO.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
 

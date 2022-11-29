@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import org.usta.DAOS.ConciertoDao;
+import org.usta.DAOS.ConciertoDAO;
 import org.usta.DAOS.TipoConciertoDao;
 import org.usta.modelos.Concierto;
 import org.usta.modelos.TipoConcierto;
@@ -53,7 +53,7 @@ public class FrmConciertoAdmin extends javax.swing.JInternalFrame {
 
         miModeloTabla.setNumRows(0);
 
-        ConciertoDao miDAOC = new ConciertoDao();
+        ConciertoDAO miDAOC = new ConciertoDAO();
         arreglo = miDAOC.consultar(orden);
         arreglo.forEach((conciertoL) -> {
             Object fila[] = new Object[4];
@@ -369,7 +369,7 @@ public class FrmConciertoAdmin extends javax.swing.JInternalFrame {
 
         codigoConcierto = Integer.valueOf(codigoTexto);
 
-        ConciertoDao MiDaoC = new ConciertoDao();
+        ConciertoDAO MiDaoC = new ConciertoDAO();
 
         Concierto objConcierto = MiDaoC.buscar(codigoConcierto);
 
@@ -414,7 +414,7 @@ public class FrmConciertoAdmin extends javax.swing.JInternalFrame {
             TipoConcierto miTipo = new TipoConcierto(codTipoConciertoFinal, "");
 
             Concierto objConcierto = new Concierto(codigoConcierto, cadenaNombre, fechaCalendario, miTipo);
-            ConciertoDao objConciertoDao = new ConciertoDao();
+            ConciertoDAO objConciertoDao = new ConciertoDAO();
 
             if (objConciertoDao.actualizar(objConcierto)) {
 
@@ -438,7 +438,7 @@ public class FrmConciertoAdmin extends javax.swing.JInternalFrame {
 
     private void btnEliminarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCActionPerformed
 
-        ConciertoDao miConciertoDAO = new ConciertoDao();
+        ConciertoDAO miConciertoDAO = new ConciertoDAO();
         Concierto objConcierto = new Concierto(codigoConcierto, "", new Date(), new TipoConcierto());
 
         if (miConciertoDAO.eliminar(objConcierto)) {

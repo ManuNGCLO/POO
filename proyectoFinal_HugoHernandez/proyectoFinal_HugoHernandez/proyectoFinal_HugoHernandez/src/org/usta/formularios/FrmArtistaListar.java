@@ -3,7 +3,7 @@ package org.usta.formularios;
 
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import org.usta.DAOS.ArtistaDao;
+import org.usta.DAOS.ArtistaDAO;
 import org.usta.modelos.Artista;
 
 public class FrmArtistaListar extends javax.swing.JInternalFrame {
@@ -24,7 +24,7 @@ public class FrmArtistaListar extends javax.swing.JInternalFrame {
         List<Artista> arreglito;
         
         miModelo.setNumRows(0);
-        ArtistaDao miDAO = new ArtistaDao();
+        ArtistaDAO miDAO = new ArtistaDAO();
         arreglito = miDAO.consultar(ordencito);
         arreglito.forEach((tipito)->{
             Object columna[] = new Object[3];

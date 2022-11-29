@@ -10,7 +10,7 @@ import org.usta.configuracion.conexion;
 import org.usta.interfaces.OperacionesBasicas;
 import org.usta.modelos.Genero;
 
-public class GeneroDao extends conexion implements OperacionesBasicas<Genero> {
+public class GeneroDAO extends conexion implements OperacionesBasicas<Genero> {
 
     @Override
     public Boolean agregar(Genero miObjeto) {
@@ -28,7 +28,7 @@ public class GeneroDao extends conexion implements OperacionesBasicas<Genero> {
             return filitas > 0;
 
         } catch (SQLException ex) {
-            Logger.getLogger(ConciertoDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConciertoDAO.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
 
@@ -61,7 +61,7 @@ public class GeneroDao extends conexion implements OperacionesBasicas<Genero> {
             return arregloGC;
 
         } catch (SQLException ex) {
-            Logger.getLogger(GeneroDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GeneroDAO.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
 
@@ -83,7 +83,7 @@ public class GeneroDao extends conexion implements OperacionesBasicas<Genero> {
             
             
         } catch (SQLException ex) {
-            Logger.getLogger(GeneroDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GeneroDAO.class.getName()).log(Level.SEVERE, null, ex);
             return false;
             
             
@@ -107,7 +107,7 @@ public class GeneroDao extends conexion implements OperacionesBasicas<Genero> {
             return filas > 0;
             
         } catch (SQLException ex) {
-            Logger.getLogger(GeneroDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GeneroDAO.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
         
@@ -142,7 +142,7 @@ public class GeneroDao extends conexion implements OperacionesBasicas<Genero> {
             return objEncontrada;
 
         } catch (SQLException ex) {
-            Logger.getLogger(GeneroDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GeneroDAO.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
         

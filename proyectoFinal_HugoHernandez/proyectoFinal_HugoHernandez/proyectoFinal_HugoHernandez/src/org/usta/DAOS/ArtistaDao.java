@@ -13,7 +13,7 @@ import org.usta.modelos.Artista;
 
 
 
-public class ArtistaDao extends conexion implements OperacionesBasicas<Artista>{
+public class ArtistaDAO extends conexion implements OperacionesBasicas<Artista>{
 
     @Override
     public Boolean agregar(Artista miObjeto) {
@@ -32,7 +32,7 @@ public class ArtistaDao extends conexion implements OperacionesBasicas<Artista>{
             return filitas > 0;
 
         } catch (SQLException ex) {
-            Logger.getLogger(ArtistaDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ArtistaDAO.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }       
         
@@ -66,7 +66,7 @@ public class ArtistaDao extends conexion implements OperacionesBasicas<Artista>{
             return arregloA;
             
         } catch (SQLException ex) {
-            Logger.getLogger(ArtistaDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ArtistaDAO.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
         
@@ -88,7 +88,7 @@ public class ArtistaDao extends conexion implements OperacionesBasicas<Artista>{
             
             
         } catch (SQLException ex) {
-            Logger.getLogger(ArtistaDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ArtistaDAO.class.getName()).log(Level.SEVERE, null, ex);
             return false;
             
             
@@ -100,8 +100,8 @@ public class ArtistaDao extends conexion implements OperacionesBasicas<Artista>{
     public Boolean actualizar(Artista miObjeto) {
        
          try {
-            cadenaSql = "UPDATE artistas SET nombre__completo_artista = ? "
-                    + ", condiciones_artista =? "
+            cadenaSql = "UPDATE artistas SET nombre_completo_artista = ? "
+                    + ", condiciones_artista = ? "
                     + "WHERE cod_artista = ?" ;
             consulta = objConexion.prepareStatement(cadenaSql);
             
@@ -115,7 +115,7 @@ public class ArtistaDao extends conexion implements OperacionesBasicas<Artista>{
             return filas > 0;
             
         } catch (SQLException ex) {
-            Logger.getLogger(ArtistaDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ArtistaDAO.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
         
@@ -126,8 +126,8 @@ public class ArtistaDao extends conexion implements OperacionesBasicas<Artista>{
     public Artista buscar(Integer llavePrimaria) {
        
          try {
-            cadenaSql = "SELECT a.cod_artista, a.nombre_completo_artista "
-                    + "FROM artistas a WHERE a.cod_artista=? ";
+            cadenaSql = "SELECT a.cod_artista, a.nombre_completo_artista, a.condiciones_artista "
+                    + " FROM artistas a WHERE a.cod_artista=? ";
 
             consulta = objConexion.prepareStatement(cadenaSql);
 
@@ -152,7 +152,7 @@ public class ArtistaDao extends conexion implements OperacionesBasicas<Artista>{
             return objEncontrada;
 
         } catch (SQLException ex) {
-            Logger.getLogger(ArtistaDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ArtistaDAO.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
         

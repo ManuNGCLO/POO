@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 
-import org.usta.DAOS.ConciertoDao;
+import org.usta.DAOS.ConciertoDAO;
 import org.usta.DAOS.TipoConciertoDao;
 import org.usta.modelos.Concierto;
 import org.usta.modelos.TipoConcierto;
@@ -267,7 +267,7 @@ public class FrmConciertoCrear extends javax.swing.JInternalFrame {
             TipoConcierto miTipo = new TipoConcierto(codTipoConciertoFinal, "");
             
             Concierto objConcierto = new Concierto(0, cadenaNombre, fechaCalendario, miTipo);
-            ConciertoDao objConciertoDao  =  new ConciertoDao();
+            ConciertoDAO objConciertoDao  =  new ConciertoDAO();
             
             if (objConciertoDao.agregar(objConcierto)) {
                 

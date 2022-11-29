@@ -1,7 +1,7 @@
 package org.usta.formularios;
 
 import javax.swing.JOptionPane;
-import org.usta.DAOS.ArtistaDao;
+import org.usta.DAOS.ArtistaDAO;
 import org.usta.modelos.Artista;
 
 
@@ -149,7 +149,7 @@ public class FrmArtistaCrear extends javax.swing.JInternalFrame {
                     "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             Artista objArtista = new Artista(0, nombre, condiciones);
-            ArtistaDao objDao = new ArtistaDao();
+            ArtistaDAO objDao = new ArtistaDAO();
             if (objDao.agregar(objArtista)) {
                 cajaNombre.setText("");
                 cajaCondicionesArtista.setText("");
