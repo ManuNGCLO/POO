@@ -6,14 +6,13 @@ import java.util.List;
 import java.util.Map;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
-import org.usta.DAOS.ArtistaCancionDAO;
+
 import org.usta.DAOS.ArtistaDAO;
-import org.usta.DAOS.CancionDAO;
+
 import org.usta.DAOS.ConciertoArtistaDAO;
 import org.usta.DAOS.ConciertoDAO;
 import org.usta.modelos.Artista;
-import org.usta.modelos.ArtistaCancion;
-import org.usta.modelos.Cancion;
+
 import org.usta.modelos.Concierto;
 import org.usta.modelos.ConciertoArtista;
 
