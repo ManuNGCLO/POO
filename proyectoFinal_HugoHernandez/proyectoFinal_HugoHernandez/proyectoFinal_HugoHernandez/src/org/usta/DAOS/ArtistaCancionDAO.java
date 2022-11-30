@@ -39,7 +39,7 @@ public class ArtistaCancionDAO extends conexion implements OperacionesBasicas<Ar
                 orden = "a.cod_artista";
             }
 
-            cadenaSql = "SELECT a.cod_artista, a.nombre_completo_artista, a.condiciones_artista,  c.nombre_cancion "
+            cadenaSql = "SELECT a.cod_artista, a.nombre_completo_artista, a.condiciones_artista,c.cod_cancion, c.nombre_cancion "
                     + "FROM artistas a "
                     + "INNER JOIN artistas_canciones ac ON ac.cod_artista = a.cod_artista "
                     + "INNER JOIN canciones c ON c.cod_cancion = ac.cod_cancion "
@@ -54,11 +54,11 @@ public class ArtistaCancionDAO extends conexion implements OperacionesBasicas<Ar
                 Integer codiguito = registro.getInt(1);
                 String nombrecito = registro.getString(2);
                 String condiciones = registro.getString(3);
-              //  Integer codigoC = registro.getInt(4);
-                String nomCancion = registro.getString(4);
+                Integer codigoC = registro.getInt(4);
+                String nomCancion = registro.getString(5);
 
-                Artista objA = new Artista(0, nombrecito, condiciones);
-                Cancion objC = new Cancion(0 , nomCancion, new Date(), null);
+                Artista objA = new Artista(codiguito, nombrecito, condiciones);
+                Cancion objC = new Cancion(codigoC , nomCancion, new Date(), null);
                 ArtistaCancion objAC = new ArtistaCancion(objC, objA);
                 arregloA.add(objAC);
 
