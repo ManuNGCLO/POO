@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Github/POO/POO/proyectoFinal_HugoHernandez/proyectoFinal_HugoHernandez/proyectoFinal_HugoHernandez/src/org/usta/formularios/FrmArtistaCancionListar.java</file>
+            <file>file:/D:/Github/POO/POO/proyectoFinal_HugoHernandez/proyectoFinal_HugoHernandez/proyectoFinal_HugoHernandez/src/org/usta/DAOS/ConciertoArtistaDAO.java</file>
+            <file>file:/D:/Github/POO/POO/proyectoFinal_HugoHernandez/proyectoFinal_HugoHernandez/proyectoFinal_HugoHernandez/src/org/usta/formularios/FrmArtistaCancion.java</file>
+            <file>file:/D:/Github/POO/POO/proyectoFinal_HugoHernandez/proyectoFinal_HugoHernandez/proyectoFinal_HugoHernandez/src/org/usta/formularios/FrmPrincipal.java</file>
+            <file>file:/D:/Github/POO/POO/proyectoFinal_HugoHernandez/proyectoFinal_HugoHernandez/proyectoFinal_HugoHernandez/src/org/usta/formularios/FrmConciertoArtistaRegistrar.java</file>
         </group>
     </open-files>
 </project-private>
